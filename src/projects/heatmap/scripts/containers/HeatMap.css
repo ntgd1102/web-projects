@@ -10,7 +10,8 @@
 span {
     width: 12px;
     height: 12px;
-    border: 2px solid;
+    border: 1px solid;
+    margin: 0.5px;
 }
 
 .light-green {
