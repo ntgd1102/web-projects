@@ -1,0 +1,13 @@
+.App {
+    justify-content: flex-start;
+}
+
+.filtered-result-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+span.matched-string {
+    color: red;
+}
