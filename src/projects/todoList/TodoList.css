@@ -1,0 +1,40 @@
+
+
+body {
+    padding: 8px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.spaced {
+    margin-bottom: 8px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+label.completed {
+    text-decoration: line-through;
+}
+
+
+/* .TodoApp {
+&__todo {
+        padding: $spacing;
+        border: 1px solid black;
+        margin-bottom: $spacing;
+    }
+} */
+
+.red_background {
+    background-color: red;
+}
+
+
