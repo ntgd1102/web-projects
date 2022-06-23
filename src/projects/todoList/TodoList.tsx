@@ -18,7 +18,7 @@ export default function TodoApp() {
 
     // when clicking 'Add Todo', add the current inputText to the todos
     function handleSubmit(e: React.SyntheticEvent, isHighPriority: boolean) {
-        e?.preventDefault();
+        e.preventDefault();
 
         const trimmedInputText = inputText.trim();
         if (trimmedInputText) {
