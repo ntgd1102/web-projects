@@ -7,10 +7,14 @@ import TodoApp from './projects/todoList/TodoList';
 import Tabs from './projects/tabs/components/Tabs';
 import Tab from './projects/tabs/components/Tab';
 import TabsDemo from './projects/tabs/components/TabsDemo';
-import { AccordionDemo } from "./projects/accordion/components/AccordionDemo";
+import { MediaCardDemo } from "./projects/mediaCard/components/MediaCardDemo";
 
 function App() {
-  return (<div className="App"><AccordionDemo /></div>);
+  return (
+    <div className="App">
+      <MediaCardDemo />
+    </div>
+  );
 }
 
 export default App;

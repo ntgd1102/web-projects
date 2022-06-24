@@ -4,7 +4,7 @@
   border-radius: 5px;
 }
 
-.tab-list {
+.tabs__list {
   border-bottom: 5px solid red;
   height: 50px;
   border-radius: 5px 5px 0px 0px;
@@ -12,17 +12,17 @@
   justify-content: space-around;
 }
 
-.tab-label {
+.tab__label {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-.tab-label--selected {
+.tab__label--selected {
   font-weight: bold;
 }
 
-.tab-content {
+.tabs__content {
   padding: 20px;
 }
