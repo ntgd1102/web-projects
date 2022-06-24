@@ -10,11 +10,12 @@ import TabsDemo from './projects/tabs/components/TabsDemo';
 import { MediaCardDemo } from "./projects/mediaCard/components/MediaCardDemo";
 import { StarRating } from './projects/starRating/components/StarRating';
 import Carousel from './projects/carousel/components/Carousel';
+import SortableTable, { SortableTableDemo } from './projects/sortableTable/components/SortableTable';
 
 function App() {
   return (
     <div className="App">
-      <Carousel />
+      <SortableTableDemo />
     </div>
   );
 }

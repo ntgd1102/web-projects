@@ -6,7 +6,10 @@
 .carousel__image {
   width: 320px;
   height: 246px;
-  
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 246px;
+  max-height: 246px;
 }
 
 .carousel__window,
