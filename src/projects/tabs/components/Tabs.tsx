@@ -28,7 +28,7 @@ export const Tabs: React.FC<TabsProps> = ({ children, defaultTabIndex }) => {
       }
 
       return (
-        <div className={`tab-label${ activeTab === index ?  ' tab-label--selected' : ''}`} onClick={() => setActiveTab(index)}>
+        <div className={`tab__label${ activeTab === index ?  ' tab__label--selected' : ''}`} onClick={() => setActiveTab(index)}>
           {child.props.title}
         </div>
       )
@@ -44,8 +44,8 @@ export const Tabs: React.FC<TabsProps> = ({ children, defaultTabIndex }) => {
   })
   return (
     <div className="tabs">
-      <div className="tab-list">{tabs}</div>
-      <div className="tab-content">{tabContent}</div>
+      <div className="tabs__list">{tabs}</div>
+      <div className="tabs__content">{tabContent}</div>
     </div>
   );
 };
