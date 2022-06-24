@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useMemo } from "react";
-import "./SortableTable.css";
+import "./SortableTable.scss";
 
 enum SortOder {
   Asc = 'asc',

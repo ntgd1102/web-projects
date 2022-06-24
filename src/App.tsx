@@ -11,6 +11,7 @@ import { MediaCardDemo } from "./projects/mediaCard/components/MediaCardDemo";
 import { StarRating } from './projects/starRating/components/StarRating';
 import Carousel from './projects/carousel/components/Carousel';
 import SortableTable, { SortableTableDemo } from './projects/sortableTable/components/SortableTable';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
