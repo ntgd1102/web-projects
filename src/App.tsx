@@ -9,11 +9,12 @@ import Tab from './projects/tabs/components/Tab';
 import TabsDemo from './projects/tabs/components/TabsDemo';
 import { MediaCardDemo } from "./projects/mediaCard/components/MediaCardDemo";
 import { StarRating } from './projects/starRating/components/StarRating';
+import Carousel from './projects/carousel/components/Carousel';
 
 function App() {
   return (
     <div className="App">
-      <StarRating />
+      <Carousel />
     </div>
   );
 }
