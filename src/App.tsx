@@ -8,11 +8,12 @@ import Tabs from './projects/tabs/components/Tabs';
 import Tab from './projects/tabs/components/Tab';
 import TabsDemo from './projects/tabs/components/TabsDemo';
 import { MediaCardDemo } from "./projects/mediaCard/components/MediaCardDemo";
+import { StarRating } from './projects/starRating/components/StarRating';
 
 function App() {
   return (
     <div className="App">
-      <MediaCardDemo />
+      <StarRating />
     </div>
   );
 }
