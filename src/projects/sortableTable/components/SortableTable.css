@@ -24,6 +24,6 @@
     cursor: pointer;
 }
 
-.sortable-table th.asc:after { content: ' ⏫'; }
-.sortable-table th.des:after { content: ' ⏬'; }
+.sortable-table th.asc::after { content: ' ⏫'; }
+.sortable-table th.des::after { content: ' ⏬'; }
 .row--gray { background: rgba(0, 0, 0, 0.04);}

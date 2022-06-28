@@ -91,3 +91,65 @@ export default function TodoApp() {
         </div>
     );
 }
+
+// import "./styles.css";
+// import React, { useState } from "react";
+
+// import { DropdownButton, Dropdown } from "react-bootstrap";
+
+// const countryCodeMap = {
+//   china: "+86",
+//   usa: "+1",
+//   france: "+33",
+// };
+
+// export default function App() {
+//   const [countryCode, setCountryCode] = useState(undefined);
+//   const [phoneNumber, setPhoneNumber] = useState("");
+
+//   const onSelect = (e) => {
+//     if (!countryCodeMap[e.target.value]) {
+//       return;
+//     }
+//     setCountryCode(countryCodeMap[e.target.value]);
+
+//     // process Number
+//     // 1. if there is already a country code here
+
+//     if (countryCode) {
+//       const numberWithoutCountryCode = phoneNumber.slice(
+//         countryCode.length,
+//         phoneNumber.length
+//       );
+//       let newPhoneNumber = `${
+//         countryCodeMap[e.target.value]
+//       }${numberWithoutCountryCode}`;
+//       setPhoneNumber(newPhoneNumber);
+//     } else {
+//       // 2. if there is no country code yet
+//       setPhoneNumber(`${countryCodeMap[e.target.value]}${phoneNumber}`);
+//     }
+//   };
+
+//   const onNumberChange = (e) => {
+//     setPhoneNumber(e.target.value);
+//   };
+
+//   return (
+//     <div className="App">
+//       <div className="phone-number-container">
+//         <select name="country" id="cars" onChange={onSelect}>
+//           <option value="china">China</option>
+//           <option value="usa">USA</option>
+//           <option value="france">France</option>
+//         </select>
+//         <input
+//           className="phone-number"
+//           value={phoneNumber}
+//           onChange={onNumberChange}
+//         />
+//       </div>
+//     </div>
+//   );
+// }
+
