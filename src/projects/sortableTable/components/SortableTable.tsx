@@ -1,9 +1,10 @@
 import React, { useCallback, useState, useMemo } from "react";
 import "./SortableTable.scss";
+// import { debounce } from "../../implementationsForJSApi/debounce";
 
 enum SortOder {
-  Asc = 'asc',
-  Des = 'des',
+  Asc = "asc",
+  Des = "des",
 }
 
 const data1 = [
@@ -72,20 +73,23 @@ export const SortableTable: React.FC<SortableTableProps> = ({ data }) => {
 
   const comparator =
     (sortKey: string, sortOrder: string) =>
-    (d1: { [x: string]: string | number }, d2: { [x: string]: string | number }) => {
+    (
+      d1: { [x: string]: string | number },
+      d2: { [x: string]: string | number }
+    ) => {
       const sign = sortOrder === "asc" ? 1 : -1;
-      if (typeof d1[sortKey] === 'string') {
-        return sign * (d1[sortKey] as string).localeCompare((d2[sortKey] as string));
-      } else {
+      if (typeof d1[sortKey] === "string") {
         return (
-          sign * ((d1[sortKey] as number) - (d2[sortKey] as number))
+          sign * (d1[sortKey] as string).localeCompare(d2[sortKey] as string)
         );
+      } else {
+        return sign * ((d1[sortKey] as number) - (d2[sortKey] as number));
       }
-     
     };
 
-  const createCells = (datum: { [s: string]: string | number } | ArrayLike<string>) =>
-    Object.values(datum).map((v, index) => <td key={index}>{v}</td>);
+  const createCells = (
+    datum: { [s: string]: string | number } | ArrayLike<string>
+  ) => Object.values(datum).map((v, index) => <td key={index}>{v}</td>);
 
   const createRows = () => {
     const active = (ind: number) => ((ind + 1) % 2 ? "row--gray" : "");
@@ -96,21 +100,36 @@ export const SortableTable: React.FC<SortableTableProps> = ({ data }) => {
     ));
   };
 
+  function debounce(func: any, timeout = 300) {
+    let timer: NodeJS.Timeout;
+    return (...args: any) => {
+      // eslint-disable-next-line no-debugger
+      debugger
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        // eslint-disable-next-line prefer-spread
+        func.apply(null, args);
+      }, timeout);
+    };
+  }
+
+  function saveInput() {
+    console.log("Saving data");
+  }
+
+  // 每次点header 都会有 console.log
+  const processChange = debounce(() => saveInput(), 2000);
+
   return (
-    <table className="sortable-table">
-      <thead>
-        {createHeaders()}
-      </thead>
+    <table className="sortable-table" onClick={processChange}>
+      <thead>{createHeaders()}</thead>
       <tbody className="sortable-table__body">{createRows()}</tbody>
     </table>
   );
 };
 
-
 export const SortableTableDemo: React.FC = () => {
-  return (
-    <SortableTable data={data1}></SortableTable>
-  )
-}
+  return <SortableTable data={data1}></SortableTable>;
+};
 
 export default SortableTable;
