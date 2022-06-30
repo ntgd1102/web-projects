@@ -19,9 +19,18 @@ import {
   filterWithoutThis,
 } from "./projects/implementationsForJSApi/filter";
 import { map } from "./projects/implementationsForJSApi/map";
+import { observerDemo } from "./projects/observerDesignPattern/demo";
+import { demo } from "./projects/eventEmitter/eventEmitter";
+import { Singleton } from "./projects/singleton/singleton";
 
 function App() {  
-  
+
+  const value = new Singleton('msg3');
+  const sdsd = new Singleton('msg2');
+
+
+  console.log(sdsd.print());
+
   return (
     <div className="App">
       <SortableTableDemo />

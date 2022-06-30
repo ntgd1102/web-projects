@@ -118,7 +118,7 @@ export const SortableTable: React.FC<SortableTableProps> = ({ data }) => {
   }
 
   // 每次点header 都会有 console.log
-  const processChange = debounce(() => saveInput(), 2000);
+  const processChange = useCallback(debounce(() => saveInput(), 2000), []);
 
   return (
     <table className="sortable-table" onClick={processChange}>
