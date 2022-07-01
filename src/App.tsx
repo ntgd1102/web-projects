@@ -25,12 +25,15 @@ import { Singleton } from "./projects/singleton/singleton";
 import { TeslaModelS } from "./projects/typeScriptOOP/TeslaModelS";
 import { AccordionDemo } from "./projects/accordion/components/AccordionDemo";
 import CarouselDemo from "./projects/carousel/components/CarouselDemo";
-import { PhoneNumberInput } from "./projects/dropdown/phoneNumberInput";
+import {
+  countryCodeMap,
+  PhoneNumberInput,
+} from "./projects/dropdown/phoneNumberInput";
 
 function App() {
   return (
     <div className="App">
-      <PhoneNumberInput />
+      <PhoneNumberInput countryCodeMap={countryCodeMap} />
     </div>
   );
 }
