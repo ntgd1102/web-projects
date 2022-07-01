@@ -22,18 +22,18 @@ import { map } from "./projects/implementationsForJSApi/map";
 import { observerDemo } from "./projects/observerDesignPattern/demo";
 import { demo } from "./projects/eventEmitter/eventEmitter";
 import { Singleton } from "./projects/singleton/singleton";
+import { TeslaModelS } from "./projects/typeScriptOOP/TeslaModelS";
+import { AccordionDemo } from "./projects/accordion/components/AccordionDemo";
+import CarouselDemo from "./projects/carousel/components/CarouselDemo";
+import {
+  countryCodeMap,
+  PhoneNumberInput,
+} from "./projects/dropdown/phoneNumberInput";
 
-function App() {  
-
-  const value = new Singleton('msg3');
-  const sdsd = new Singleton('msg2');
-
-
-  console.log(sdsd.print());
-
+function App() {
   return (
     <div className="App">
-      <SortableTableDemo />
+      <PhoneNumberInput countryCodeMap={countryCodeMap} />
     </div>
   );
 }

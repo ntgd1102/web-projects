@@ -103,8 +103,6 @@ export const SortableTable: React.FC<SortableTableProps> = ({ data }) => {
   function debounce(func: any, timeout = 300) {
     let timer: NodeJS.Timeout;
     return (...args: any) => {
-      // eslint-disable-next-line no-debugger
-      debugger
       clearTimeout(timer);
       timer = setTimeout(() => {
         // eslint-disable-next-line prefer-spread
