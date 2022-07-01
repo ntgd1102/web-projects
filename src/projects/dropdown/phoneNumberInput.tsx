@@ -90,7 +90,7 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
       </Dropdown>
       <form onSubmit={(input) => {}}>
         <label>
-          Name:
+          Phone Number:
           <input
             type="tel"
             value={phoneNumber}
