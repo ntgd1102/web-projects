@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './Carousel.css';
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import "./Carousel.css";
 
 const IMAGE_WIDTH = 320;
 
@@ -11,27 +11,26 @@ export const Carousel: React.FC = () => {
   const ref: any = useRef(null);
   useEffect(() => {
     if (ref && ref.current && ref.current.style) {
-      ref.current.style.transform = `translate(${
+      ref.current.style.transform = `translateX(${
         IMAGE_WIDTH * -activeIndex
-      }px,0)`;
+      }px)`; // 只用移动X轴
     }
   }, [activeIndex]);
-  
-  const generateImages = (images: string[]) => {
-    return images.map((img : string, index: number) => {
+
+  const generateImages = useCallback((images: string[]) => {
+    return images.map((img: string, index: number) => {
       return (
-        <div className="carousel__image-wrapper" key={index}>
-          <img
-            className="carousel__image"
-            data-index={index}
-            src={img}
-            alt="carousel image"
-          />
-        </div>
+        <img
+          className="carousel__image"
+          data-index={index}
+          src={img}
+          alt="carousel image"
+          key={index}
+        />
       );
-    })
-  };
-  
+    });
+  }, []);
+
   return (
     <div className="carousel">
       <div className="carousel__window">
@@ -39,7 +38,7 @@ export const Carousel: React.FC = () => {
           {generateImages(images)}
         </div>
         <div className="carousel__controls">
-          <div
+          <button
             className="carousel__control"
             data-control="left"
             role="button"
@@ -51,8 +50,8 @@ export const Carousel: React.FC = () => {
             }}
           >
             ←
-          </div>
-          <div
+          </button>
+          <button
             className="carousel__control"
             data-control="right"
             role="button"
@@ -64,11 +63,11 @@ export const Carousel: React.FC = () => {
             }}
           >
             →
-          </div>
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Carousel;
