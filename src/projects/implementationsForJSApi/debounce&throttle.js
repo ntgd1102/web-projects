@@ -4,7 +4,6 @@ export function debounce(fn, delay) {
   return (...args) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
-      debugger;
       fn(...args);
     }, delay);
   };

@@ -77,18 +77,13 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
     });
   }, [countryCodeMap]);
 
-  useEffect(() => {
-    if (countryCode) {
-    }
-  }, [countryCode]);
-
   return (
     <div className="phone-number-input">
       <Dropdown onSelect={onCountryCodeChange}>
         <Dropdown.Toggle>Country Code</Dropdown.Toggle>
         <Dropdown.Menu>{dropdownItems}</Dropdown.Menu>
       </Dropdown>
-      <form onSubmit={(input) => {}}>
+      <form>
         <label>
           Phone Number:
           <input
