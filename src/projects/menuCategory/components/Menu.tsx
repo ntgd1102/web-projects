@@ -1,5 +1,8 @@
 import React, { useState, useCallback } from "react";
 
+import HomePage from './HomePage';
+import CategoryPage from './CategoryPage';
+
 enum Page {
   Home = "home",
   Category = "Category",
@@ -18,7 +21,7 @@ export const Menu: React.FC = () => {
       <hr />
       <h4>Streamlinity UI test assignment starts be  low this line..</h4>
       <hr />
-      {page}
+      {page === Page.Home ? <HomePage /> : <CategoryPage />}
     </div>
   );
 };

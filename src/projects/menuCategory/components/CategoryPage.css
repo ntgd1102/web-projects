@@ -1,0 +1,14 @@
+.category-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-page__list {
+  margin: 30px;
+}
+
+.category-page__category-item {
+  width: 200px;
+  color: blue;
+  cursor: pointer;
+}
