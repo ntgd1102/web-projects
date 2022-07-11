@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+<div id='bubbleDiv'>
+    <h2>Bubble event propagation</h2>
+    <ul id='bubbleList'>
+        <li id='bubbleItem'><a id='bubbleLink'>Bubble Item</a></li>
+    </ul>
+</div>
+<div id='captureDiv'>
+    <h2>Capture event propagation</h2>
+    <ul id='captureList'>
+        <li id='captureItem'><a id='capurelicnk'>Capture Item</a></li>
+    </ul>
+</div>
+<script>
+    function showElement() {
+        alert(this.id);
+    }
+
+    // bubble listeners
+    let el = document.getElementById("bubbleList");
+    el.addEventListener("click", showElement, false);
+
+    el = document.getElementById("bubbleItem");
+    el.addEventListener("click", showElement, false);
+
+    el = document.getElementById("bubbleLink");
+    el.addEventListener("click", showElement, false);
+
+    //capture listeners
+    el = document.getElementById("captureList");
+    el.addEventListener("click", showElement, true);
+
+    el = document.getElementById("captureItem");
+    el.addEventListener("click", showElement, true);
+
+    el = document.getElementById("capurelicnk");
+    el.addEventListener("click", showElement, true);
+</script>
+</body>
+
+</html>

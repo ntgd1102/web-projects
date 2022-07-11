@@ -28,12 +28,16 @@ import CarouselDemo from "./projects/carousel/components/CarouselDemo";
 import {
   countryCodeMap,
   PhoneNumberInput,
-} from "./projects/dropdown/phoneNumberInput";
+} from './projects/dropdown/phoneNumberInput';
+import {run} from "./projects/env";
+import {App2} from "./ClassComponent";
+import Menu from "./projects/menuCategory/components/Menu";
 
 function App() {
+
   return (
     <div className="App">
-      <PhoneNumberInput countryCodeMap={countryCodeMap} />
+      <Menu />
     </div>
   );
 }
