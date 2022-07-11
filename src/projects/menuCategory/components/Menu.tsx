@@ -16,7 +16,7 @@ export const Menu: React.FC = () => {
       <button onClick={handleClickGenerator(Page.Home)}>Home</button>
       <button onClick={handleClickGenerator(Page.Category)}>Category</button>
       <hr />
-      <h4>Streamlinity UI test assignment starts below this line..</h4>
+      <h4>Streamlinity UI test assignment starts be  low this line..</h4>
       <hr />
       {page}
     </div>
