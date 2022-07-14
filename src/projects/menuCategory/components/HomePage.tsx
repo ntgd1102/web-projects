@@ -4,7 +4,7 @@ import './HomePage.css';
 
 export const HomePage: React.FC = () => {
   return (
-    <div className='home-page'>
+    <div className="home-page">
       <h3>LOCATION & HOURS</h3>
       <div>1067 N San Antonio Rd Los Altos, CA 94022</div>
       <div>Phone: (650) 948-2696</div>
@@ -14,6 +14,6 @@ export const HomePage: React.FC = () => {
       <div>Saturday 12pm (noon) – 10pm</div>
     </div>
   );
-}
+};
 
 export default HomePage;
