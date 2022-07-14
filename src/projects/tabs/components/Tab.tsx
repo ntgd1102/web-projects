@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ReactNode } from "react";
+import type {ReactNode} from 'react';
 
 export interface TabProps {
   /**
@@ -17,6 +17,7 @@ export interface TabProps {
 }
 
 export const Tab: React.FC<TabProps> = (children, className) => {
+  // eslint-disable-next-line react/jsx-filename-extension
   return <div className={className}>{children}</div>;
 };
 
