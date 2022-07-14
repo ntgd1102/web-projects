@@ -20,6 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "allow": "as-needed" }]
+        "react/jsx-filename-extension": [1, { "allow": "as-needed" }],
+        "react/require-default-props": "warn"
     }
 }

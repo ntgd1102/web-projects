@@ -1,28 +1,13 @@
-import React, {
-  // eslint-disable-next-line no-unused-vars
-  FormEvent,
-  // eslint-disable-next-line no-unused-vars
-  SyntheticEvent,
-  useCallback,
-  // eslint-disable-next-line no-unused-vars
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-// eslint-disable-next-line no-unused-vars
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import React, { useCallback, useMemo, useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
 
-import "./PhoneNumberInput.scss";
-import {
-  // eslint-disable-next-line no-unused-vars
-  debounce,
-  throttle,
-} from "../implementationsForJSApi/debounce&throttle";
+import './PhoneNumberInput.scss';
+import { throttle } from '../implementationsForJSApi/debounce&throttle';
 
 export const countryCodeMap = {
-  England: "+44",
-  China: "+86",
-  "United States": "+1",
+  England: '+44',
+  China: '+86',
+  'United States': '+1',
 };
 
 interface Props {
@@ -33,20 +18,20 @@ interface Props {
 
 export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
   const [countryCode, setCountryCode] = useState<string | undefined>(undefined);
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const onCountryCodeChange = useCallback(
     (selectedCountryCode) => {
       if (!countryCode) {
-        setPhoneNumber(`${selectedCountryCode} ${phoneNumber}` ?? "");
+        setPhoneNumber(`${selectedCountryCode} ${phoneNumber}` ?? '');
       } else {
         setPhoneNumber(
-          selectedCountryCode + phoneNumber.slice(countryCode.length)
+          selectedCountryCode + phoneNumber.slice(countryCode.length),
         );
       }
       setCountryCode(selectedCountryCode);
     },
-    [countryCode, phoneNumber]
+    [countryCode, phoneNumber],
   );
 
   // // 这种方法是错误的因为传递的是reference 等待了时间之后 value 的值是空的
@@ -58,6 +43,7 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
   //   setPhoneNumber(e.target.value);
   // };
   //
+  // eslint-disable-next-line max-len
   // const onUpdatePhoneNumberWithEventIsWrong = useCallback(throttle(onPhoneNumberChange, 200), []);
 
   // 用到closure的一定要用useCallback, 以免重复创建
@@ -73,13 +59,12 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
   };
 
   const dropdownItems = useMemo(
-    () =>
-      Object.entries(countryCodeMap).map(([key, value]) => (
-        <Dropdown.Item eventKey={value} key={value}>
-          {key.toLocaleUpperCase()}
-        </Dropdown.Item>
-      )),
-    [countryCodeMap]
+    () => Object.entries(countryCodeMap).map(([key, value]) => (
+      <Dropdown.Item eventKey={value} key={value}>
+        {key.toLocaleUpperCase()}
+      </Dropdown.Item>
+    )),
+    [countryCodeMap],
   );
 
   return (
