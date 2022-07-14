@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 class Publisher {
   constructor(eventEmitter) {
     this.emitter = eventEmitter;
@@ -14,16 +15,15 @@ class Subscriber {
   }
 }
 
-
 class EventEmitter {
-  constructor () {
+  constructor() {
     this.listeners = {};
   }
 
   on(eventType, eventListener) {
     if (!this.listeners[eventType]) {
       this.listeners[eventType] = [];
-    } 
+    }
     this.listeners[eventType].push(eventListener);
   }
 
@@ -38,8 +38,8 @@ class EventEmitter {
   emit(eventType, data) {
     const eventListeners = this.listeners[eventType];
     if (eventListeners) {
-      for (let eventListener of eventListeners) {
-        eventListener.eventHandler(data)
+      for (const eventListener of eventListeners) {
+        eventListener.eventHandler(data);
       }
     }
   }
@@ -48,42 +48,39 @@ class EventEmitter {
 export const demo = () => {
   const emitter = new EventEmitter();
   const subscriber = new Subscriber();
-  emitter.on("event type", subscriber);
+  emitter.on('event type', subscriber);
   const publisher = new Publisher(emitter);
   publisher.triggerEvent();
   const sdsd = printer.getInstance();
   sdsd.print();
-}
-
+};
 
 var printer = (function () {
+  let printerInstance;
 
-    var printerInstance;
-
-    function create () {
-
+  function create() {
     function print() {
-        console.log('222');
+      console.log('222');
     }
 
     function turnOn() {
-        // warm up
-        // check for paper
+      // warm up
+      // check for paper
     }
 
     return {
-        // public + private states and behaviors
-        print: print,
-        turnOn: turnOn
+      // public + private states and behaviors
+      print,
+      turnOn,
     };
-    }
+  }
 
-    return {
-      getInstance: function () {
-        if (!printerInstance) {
-          printerInstance = create();
-        }
-        return printerInstance;
-      },
-    };
-})();
+  return {
+    getInstance() {
+      if (!printerInstance) {
+        printerInstance = create();
+      }
+      return printerInstance;
+    },
+  };
+}());
