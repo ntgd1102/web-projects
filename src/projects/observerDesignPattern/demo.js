@@ -8,14 +8,14 @@ class SubjectClass {
   }
 
   unsubscribeObserver(observer) {
-    let index = this.observers.indexOf(observer);
-    if (index > -1) {
+    const index = this.observers.indexOf(observer);
+    if (i > -1) {
       this.observers.splice(index, 1);
     }
   }
 
   notifyObserver(observer) {
-    let index = this.observers.indexOf(observer);
+    const index = this.observers.indexOf(observer);
     if (index > -1) {
       this.observers[index].notify(index);
     }
@@ -30,28 +30,27 @@ class SubjectClass {
 
 class ObserverClass {
   notify(index) {
-    console.log("Observer " + index + " is notified!");
+    console.log('Observer ' + index + ' is notified!');
   }
 }
 
 
-
-export const observerDemo = () => { 
-  let Subject = () => {
-    let observers = [];
+export const observerDemo = () => {
+  const Subject = () => {
+    const observers = [];
 
     return {
       subscribeObserver: (observer) => {
         observers.push(observer);
       },
       unsubscribeObserver: (observer) => {
-        let index = observers.indexOf(observer);
+        const index = observers.indexOf(observer);
         if (index > -1) {
           observers.splice(index, 1);
         }
       },
       notifyObserver: (observer) => {
-        let index = observers.indexOf(observer);
+        const index = observers.indexOf(observer);
         if (index > -1) {
           observers[index].notify(index);
         }
@@ -64,19 +63,19 @@ export const observerDemo = () => {
     };
   };
 
-  let Observer = () => {
+  const Observer = () => {
     return {
-      notify: function (index) {
-        console.log("The Observer " + index + " is notified!");
+      notify: function(index) {
+        console.log('The Observer ' + index + ' is notified!');
       },
     };
   };
 
-  let subject = new SubjectClass();
-  let observer1 = new ObserverClass();
-  let observer2 = new ObserverClass();
-  let observer3 = new ObserverClass();
-  let observer4 = new ObserverClass();
+  const subject = new SubjectClass();
+  const observer1 = new ObserverClass();
+  const observer2 = new ObserverClass();
+  const observer3 = new ObserverClass();
+  const observer4 = new ObserverClass();
 
   subject.subscribeObserver(observer1);
   subject.subscribeObserver(observer2);
@@ -86,4 +85,4 @@ export const observerDemo = () => {
   subject.notifyObserver(observer2); // Observer 2 is notified!
 
   subject.notifyAllObservers();
-}
+};

@@ -22,6 +22,15 @@
     "rules": {
         "no-unused-vars": "off",
         "react/require-default-props": "warn",
+        "require-jsdoc": ["error", {
+        "require": {
+            "FunctionDeclaration": false,
+            "MethodDefinition": false,
+            "ClassDeclaration": false,
+            "ArrowFunctionExpression": false,
+            "FunctionExpression": false
+        }
+        }],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
     }
 }
