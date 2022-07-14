@@ -1,29 +1,14 @@
-function* generator() {
-    yield 1;
-    yield 2;
-    yield 3;
-
-}
-
-class NewCar {
-    constructor() {
-        this.size = 4;
-    }
-
-    run() {
-        console.log(`a car of size${this.size} is running`);
-    }
-}
-
 export const run = () => {
+  const transferArrayToObject = (a2rray) => {
+    const newObject = {};
+    const key = a2rray[0];
+    const value = a2rray[1];
+    newObject[key] = value;
+    return newObject;
+  };
 
-     var c = 10;
-    function edit() {
-        console.log(c);
-           var c = 20; 
-    }
-    edit();
-    // 2 // -> closure
-console.log(c)
+  const returnValue = transferArrayToObject([0, 1]);
+  console.log(returnValue);
+};
 
-}
+export default run;

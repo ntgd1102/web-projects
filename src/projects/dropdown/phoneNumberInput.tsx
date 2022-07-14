@@ -1,15 +1,20 @@
 import React, {
+  // eslint-disable-next-line no-unused-vars
   FormEvent,
+  // eslint-disable-next-line no-unused-vars
   SyntheticEvent,
   useCallback,
+  // eslint-disable-next-line no-unused-vars
   useEffect,
   useMemo,
   useState,
 } from "react";
+// eslint-disable-next-line no-unused-vars
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
 import "./PhoneNumberInput.scss";
 import {
+  // eslint-disable-next-line no-unused-vars
   debounce,
   throttle,
 } from "../implementationsForJSApi/debounce&throttle";
@@ -33,7 +38,7 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
   const onCountryCodeChange = useCallback(
     (selectedCountryCode) => {
       if (!countryCode) {
-        setPhoneNumber(selectedCountryCode + " " + phoneNumber ?? "");
+        setPhoneNumber(`${selectedCountryCode} ${phoneNumber}` ?? "");
       } else {
         setPhoneNumber(
           selectedCountryCode + phoneNumber.slice(countryCode.length)
@@ -67,15 +72,15 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
     updatePhoneNumber(e.target.value);
   };
 
-  const dropdownItems = useMemo(() => {
-    return Object.entries(countryCodeMap).map(([key, value]) => {
-      return (
+  const dropdownItems = useMemo(
+    () =>
+      Object.entries(countryCodeMap).map(([key, value]) => (
         <Dropdown.Item eventKey={value} key={value}>
           {key.toLocaleUpperCase()}
         </Dropdown.Item>
-      );
-    });
-  }, [countryCodeMap]);
+      )),
+    [countryCodeMap]
+  );
 
   return (
     <div className="phone-number-input">

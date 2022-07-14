@@ -34,7 +34,7 @@ import {App2} from "./ClassComponent";
 import Menu from "./projects/menuCategory/components/Menu";
 
 function App() {
-
+  run();
   return (
     <div className="App">
       <Menu />
