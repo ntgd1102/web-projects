@@ -22,9 +22,5 @@
   },
   "include": [
     "src"
-  ],
-  "extends": ["airbnb", "airbnb-typescript"],
-      "parserOptions": {
-     "project": "./tsconfig.json"
-   }
+  ]
 }
