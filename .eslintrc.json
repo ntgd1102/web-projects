@@ -5,7 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "google"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,6 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-unused-vars": "off",
         "react/jsx-filename-extension": [1, { "allow": "as-needed" }],
         "react/require-default-props": "warn"
     }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './CategoryItems.css';
 
@@ -17,18 +17,18 @@ export const CategoryItems: React.FC<OwnProps> = ({
   const [items, setItems] = useState<Array<Item>>([]);
   useEffect(() => {
     fetch(
-      `https://stream-restaurant-menu-svc.herokuapp.com/item?category=${selectedCategory}`,
+        `https://stream-restaurant-menu-svc.herokuapp.com/item?category=${selectedCategory}`,
     )
-      .then((data) => data.json())
-      .then((data) => {
-        const itemsList = data.map(
-          (item: { name: string; description: string }) => ({
-            name: item.name,
-            description: item.description,
-          }),
-        );
-        setItems(itemsList);
-      });
+        .then((data) => data.json())
+        .then((data) => {
+          const itemsList = data.map(
+              (item: { name: string; description: string }) => ({
+                name: item.name,
+                description: item.description,
+              }),
+          );
+          setItems(itemsList);
+        });
   }, [selectedCategory]);
 
   return items.length === 0 ? null : (

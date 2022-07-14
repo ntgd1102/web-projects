@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import CategoryItems from "./CategoryItems";
+import React, {useCallback, useEffect, useState} from 'react';
+import CategoryItems from './CategoryItems';
 import './CategoryPage.css';
 
 interface Category {
@@ -9,18 +9,27 @@ interface Category {
 
 export const CategoryPage: React.FC = () => {
   const [categories, setCategories] = useState<Array<Category>>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string|undefined>(undefined);
-  const onClickHandlerGenerator = useCallback((val: string) => () => {
-    setSelectedCategory(val);
-  }, []);
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
+      undefined,
+  );
+  const onClickHandlerGenerator = useCallback(
+      (val: string) => () => {
+        setSelectedCategory(val);
+      },
+      [],
+  );
   useEffect(() => {
-    fetch("https://stream-restaurant-menu-svc.herokuapp.com/category").then(res => res.json()).then(data => {
-      const categories = data.map((category: { name: string, short_name: string }) => ({
-        name: category.name,
-        shortName: category.short_name,
-      }))
-      setCategories(categories);
-    });
+    fetch('https://stream-restaurant-menu-svc.herokuapp.com/category')
+        .then((res) => res.json())
+        .then((data) => {
+          const categories = data.map(
+              (category: { name: string; short_name: string }) => ({
+                name: category.name,
+                shortName: category.short_name,
+              }),
+          );
+          setCategories(categories);
+        });
   }, []);
   return (
     <div className="category-page">
@@ -29,7 +38,7 @@ export const CategoryPage: React.FC = () => {
           <li
             key={index}
             onClick={onClickHandlerGenerator(category.shortName)}
-            className='category-page__category-item'
+            className="category-page__category-item"
           >{`${category.name} - ${category.shortName}`}</li>
         ))}
       </ul>
