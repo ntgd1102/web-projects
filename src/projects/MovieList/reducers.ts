@@ -1,15 +1,24 @@
 import {ActionType} from './actions';
 import {Movie} from './types';
 
+export interface MovieState {
+  myMovies: Movie[];
+  recommendedMovies: Movie[];
+}
+
+export interface State {
+  movies: {
+    myMovies: Movie[];
+    recommendedMovies: Movie[];
+  };
+}
+
 const initialState = {
   myMovies: [],
   recommendedMovies: [],
 };
 
-export const reducer = (
-    state: { myMovies: Movie[]; recommendedMovies: Movie[] } = initialState,
-    action: any,
-) => {
+export const reducer = (state: MovieState = initialState, action: any) => {
   switch (action.type) {
     case ActionType.fetchingMovieDone:
       return {

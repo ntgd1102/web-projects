@@ -4,19 +4,26 @@ import {addMovieToMyList, getList, removeMovieFromMyList} from '../actions';
 import {getMyMovieList, getRecommendedList} from '../selectors';
 import {Movie} from '../types';
 import MovieListRow from '../components/MovieListRow';
+import {ThunkDispatch} from 'redux-thunk';
+import {RootState} from '../../../store';
+import {Action} from 'redux';
 
 export const MovieListContainer: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch: ThunkDispatch<
+    RootState,
+    null,
+    Action<string>
+  > = useDispatch();
   useEffect(() => {
-    dispatch<any>(getList());
+    dispatch(getList());
   }, []);
   const recommendedMovies = useSelector(getRecommendedList);
   const myMovieList = useSelector(getMyMovieList);
   const deleteMovie = useCallback((movie: Movie) => {
-    dispatch<any>(removeMovieFromMyList(movie));
+    dispatch(removeMovieFromMyList(movie));
   }, []);
   const addMovie = useCallback((movie: Movie) => {
-    dispatch<any>(addMovieToMyList(movie));
+    dispatch(addMovieToMyList(movie));
   }, []);
   return (
     <div>
