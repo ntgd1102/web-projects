@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {connect, useDispatch} from 'react-redux';
+import {connect} from 'react-redux';
 import {addMovieToMyList, getList, removeMovieFromMyList} from '../actions';
 import {getMyMovieList, getRecommendedList} from '../selectors';
 import {Movie} from '../types';
@@ -41,11 +41,6 @@ export const MovieListContainerWithoutHook: React.FC<Props> = ({
   myMoviesList,
   recommendedMovies,
 }) => {
-  const dispatch: ThunkDispatch<
-    RootState,
-    null,
-    Action<string>
-  > = useDispatch();
   useEffect(() => {
     getList();
   }, []);
