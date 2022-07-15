@@ -1,6 +1,7 @@
 import {ThunkAction} from 'redux-thunk';
 import {Action} from 'redux';
-import {Movie, MovieListState} from './types';
+import {Movie} from './types';
+import {RootState} from '../../store';
 
 export enum ActionType {
   fetchingMovieDone = 'FETCHING_MOVIE_DONE',
@@ -9,7 +10,7 @@ export enum ActionType {
 }
 
 export const getList =
-  (): ThunkAction<void, MovieListState, null, Action<string>> =>
+  (): ThunkAction<void, RootState, null, Action<string>> =>
     async (dispatch) => {
       try {
         const res = await fetch('moviedata.json', {
