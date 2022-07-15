@@ -3,13 +3,13 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {run} from './projects/env'; // eslint-disable-next-line max-len
-import MovieListContainerWithClass from './projects/MovieList/containers/MovieListContainerWithClass';
+import MovieListContainerWithoutHook from './projects/MovieList/containers/MovieListContainerWithoutHook';
 
 const App = () => {
   run();
   return (
     <div className="App">
-      <MovieListContainerWithClass />
+      <MovieListContainerWithoutHook />
     </div>
   );
 };
