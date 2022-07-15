@@ -22,14 +22,14 @@ export const reducer = (
         recommendedMovies: state.recommendedMovies.filter(
             (item: Movie) => item.id !== movieId,
         ),
-        myMovies: [state.myMovies, action.payload],
+        myMovies: [...state.myMovies, action.payload],
       };
     }
     case ActionType.removeMovie: {
       const movieId = action.payload.id;
       return {
         myMovies: state.myMovies.filter((item: Movie) => item.id !== movieId),
-        recommendedMovies: [state.recommendedMovies, action.payload],
+        recommendedMovies: [...state.recommendedMovies, action.payload],
       };
     }
     default:
