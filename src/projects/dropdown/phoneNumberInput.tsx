@@ -1,12 +1,12 @@
-import React, { useCallback, useMemo, useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import React, {useCallback, useMemo, useState} from 'react';
+import {Dropdown} from 'react-bootstrap';
 
 import './PhoneNumberInput.scss';
-import { throttle } from '../implementationsForJSApi/debounce&throttle';
+import {throttle} from '../implementationsForJSApi/debounce&throttle';
 
 export const countryCodeMap = {
-  England: '+44',
-  China: '+86',
+  'England': '+44',
+  'China': '+86',
   'United States': '+1',
 };
 
@@ -16,22 +16,22 @@ interface Props {
   };
 }
 
-export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
+export const PhoneNumberInput: React.FC<Props> = ({countryCodeMap}) => {
   const [countryCode, setCountryCode] = useState<string | undefined>(undefined);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const onCountryCodeChange = useCallback(
-    (selectedCountryCode) => {
-      if (!countryCode) {
-        setPhoneNumber(`${selectedCountryCode} ${phoneNumber}` ?? '');
-      } else {
-        setPhoneNumber(
-          selectedCountryCode + phoneNumber.slice(countryCode.length),
-        );
-      }
-      setCountryCode(selectedCountryCode);
-    },
-    [countryCode, phoneNumber],
+      (selectedCountryCode) => {
+        if (!countryCode) {
+          setPhoneNumber(`${selectedCountryCode} ${phoneNumber}` ?? '');
+        } else {
+          setPhoneNumber(
+              selectedCountryCode + phoneNumber.slice(countryCode.length),
+          );
+        }
+        setCountryCode(selectedCountryCode);
+      },
+      [countryCode, phoneNumber],
   );
 
   // // 这种方法是错误的因为传递的是reference 等待了时间之后 value 的值是空的
@@ -59,12 +59,13 @@ export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
   };
 
   const dropdownItems = useMemo(
-    () => Object.entries(countryCodeMap).map(([key, value]) => (
-      <Dropdown.Item eventKey={value} key={value}>
-        {key.toLocaleUpperCase()}
-      </Dropdown.Item>
-    )),
-    [countryCodeMap],
+      () =>
+        Object.entries(countryCodeMap).map(([key, value]) => (
+          <Dropdown.Item eventKey={value} key={value}>
+            {key.toLocaleUpperCase()}
+          </Dropdown.Item>
+        )),
+      [countryCodeMap],
   );
 
   return (
