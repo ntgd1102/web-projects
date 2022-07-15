@@ -1,6 +1,6 @@
 import {ThunkAction} from 'redux-thunk';
 import {Action} from 'redux';
-import {MovieListState} from './types';
+import {Movie, MovieListState} from './types';
 
 export enum ActionType {
   fetchingMovieDone = 'FETCHING_MOVIE_DONE',
@@ -24,7 +24,15 @@ export const getList =
           type: ActionType.fetchingMovieDone,
           payload: res,
         });
-      } catch (e) {
-        console.log(e);
-      }
+      } catch (e) {}
     };
+
+export const removeMovieFromMyList = (movie: Movie) => ({
+  type: ActionType.removeMovie,
+  payload: movie,
+});
+
+export const addMovieToMyList = (movie: Movie) => ({
+  type: ActionType.addMovie,
+  payload: movie,
+});

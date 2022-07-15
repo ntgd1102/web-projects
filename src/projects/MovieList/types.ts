@@ -1,6 +1,7 @@
 export interface Movie {
   id: string;
-  name: string;
+  title: string;
+  img: string;
 }
 
 export interface MovieListState {

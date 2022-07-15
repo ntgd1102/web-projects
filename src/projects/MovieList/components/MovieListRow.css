@@ -1,0 +1,20 @@
+.movie-list-row {
+    display: flex;
+}
+
+.movie-item {
+    margin-right: 20px;
+}
+
+.movie-item button {
+    margin-top: 2px;
+    visibility: hidden;
+}
+
+.movie-item:hover button {
+    visibility: visible;
+}
+
+button {
+    display: block;
+}
