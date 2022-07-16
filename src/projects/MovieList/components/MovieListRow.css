@@ -1,5 +1,6 @@
 .movie-list-row {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .movie-item {
@@ -17,4 +18,27 @@
 
 button {
     display: block;
+}
+
+h4 {
+    position: relative;
+}
+
+h4:hover::before,
+h4:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 20px;
+    height: 2px;
+    background-color: red;
+}
+
+h4:hover::before {
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+h4:hover::after {
+    transform: translate(0, -50%) rotate(-45deg);
 }

@@ -4,6 +4,4 @@ export class TeslaModelS {
   constructor(seatsNumber: number) {
     this.seatsNumber = seatsNumber;
   }
-
-  
 }
