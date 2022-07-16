@@ -2,13 +2,11 @@ import React from 'react';
 import './MediaCard.css';
 
 export interface MediaCardProps {
-  
   author: string;
 
   article: string;
 
   imageURL: string;
-  
   title: string;
   /**
    * Class name for tab content
@@ -17,7 +15,10 @@ export interface MediaCardProps {
 }
 
 export const MediaCard: React.FC<MediaCardProps> = ({
-  author, article, title, imageURL
+  author,
+  article,
+  title,
+  imageURL,
 }) => {
   return (
     <div className="media-card">

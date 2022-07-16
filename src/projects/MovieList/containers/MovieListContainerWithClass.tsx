@@ -42,7 +42,6 @@ class MovieListContainerWithClass extends React.PureComponent<Props> {
   render() {
     const {deleteMovie, addMovie, myMoviesList, recommendedMovies} =
       this.props;
-    debugger;
     return (
       <div>
         <MovieListRow
