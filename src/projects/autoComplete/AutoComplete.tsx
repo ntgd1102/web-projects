@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import lodash from 'lodash';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ export default function AutoComplete() {
     axios
         .get('https://stream-restaurant-menu-svc.herokuapp.com/item?')
         .then((response) => {
-          const {data} = response;
+          const { data } = response;
           const items = data.map((item: { name: string }) => item.name);
           setItems(items);
         });

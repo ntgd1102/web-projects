@@ -1,6 +1,5 @@
-import React, {useState, Children} from 'react';
-import type {ReactComponentElement} from 'react';
-
+import type { ReactComponentElement } from 'react';
+import React, { Children, useState } from 'react';
 
 import Tab from './Tab';
 
@@ -16,32 +15,46 @@ export interface TabsProps {
     | ReactComponentElement<typeof Tab>;
 }
 
-export const Tabs: React.FC<TabsProps> = ({children, defaultTabIndex}) => {
+export const Tabs: React.FC<TabsProps> = ({ children, defaultTabIndex }) => {
   const [activeTab, setActiveTab] = useState<number | undefined>(
       defaultTabIndex,
   );
   const tabs = Children.map(
       children,
-      (child: ReactComponentElement<typeof Tab> | null | undefined, index: number) => {
+      (
+          child: ReactComponentElement<typeof Tab> | null | undefined,
+          index: number,
+      ) => {
         if (!child) {
           return null;
         }
 
         return (
-          <div className={`tab__label${ activeTab === index ? ' tab__label--selected' : ''}`} onClick={() => setActiveTab(index)}>
+          <div
+            className={`tab__label${
+            activeTab === index ? ' tab__label--selected' : ''
+            }`}
+            onClick={() => setActiveTab(index)}
+          >
             {child.props.title}
           </div>
         );
       },
   );
 
-  const tabContent = Children.map(children, (child: ReactComponentElement<typeof Tab> | null | undefined, index: number) => {
-    if (!child) {
-      return undefined;
-    }
+  const tabContent = Children.map(
+      children,
+      (
+          child: ReactComponentElement<typeof Tab> | null | undefined,
+          index: number,
+      ) => {
+        if (!child) {
+          return undefined;
+        }
 
-    return index === activeTab ? child.props.children : undefined;
-  });
+        return index === activeTab ? child.props.children : undefined;
+      },
+  );
   return (
     <div className="tabs">
       <div className="tabs__list">{tabs}</div>
