@@ -1,12 +1,12 @@
-import React, {useCallback, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {addMovieToMyList, getList, removeMovieFromMyList} from '../actions';
-import {getMyMovieList, getRecommendedList} from '../selectors';
-import {Movie} from '../types';
+import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMovieToMyList, getList, removeMovieFromMyList } from '../actions';
+import { getMyMovieList, getRecommendedList } from '../selectors';
+import { Movie } from '../types';
 import MovieListRow from '../components/MovieListRow';
-import {ThunkDispatch} from 'redux-thunk';
-import {RootState} from '../../../store';
-import {Action} from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { RootState } from '../../../store';
+import { Action } from 'redux';
 
 export const MovieListContainer: React.FC = () => {
   const dispatch: ThunkDispatch<
