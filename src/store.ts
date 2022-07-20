@@ -1,11 +1,11 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-import reducer, {State as MovieState} from './projects/MovieList/reducers';
-import {configureStore} from '@reduxjs/toolkit';
+import reducer, { State as MovieState } from './projects/MovieList/reducers';
+import { configureStore } from '@reduxjs/toolkit';
 
-const rootReducer = combineReducers({movies: reducer});
+const rootReducer = combineReducers({ movies: reducer });
 
 export interface RootState extends MovieState {}
 
@@ -22,7 +22,7 @@ export function configureStoreLocal() {
 }
 
 const store = configureStore({
-  reducer: {movies: reducer},
+  reducer: { movies: reducer },
   middleware: [thunk],
   devTools: true,
 });

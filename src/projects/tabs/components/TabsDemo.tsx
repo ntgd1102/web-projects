@@ -1,9 +1,8 @@
 import React from 'react';
-import Tabs from "./Tabs";
-import Tab from "./Tab";
+import Tabs from './Tabs';
+import Tab from './Tab';
 
 export const TabsDemo: React.FC = () => {
-
   const getContent = (index: number) => {
     return (
       <section>
@@ -14,7 +13,7 @@ export const TabsDemo: React.FC = () => {
         </div>
       </section>
     );
-  }
+  };
 
   return (
     <div className="App">
@@ -25,6 +24,6 @@ export const TabsDemo: React.FC = () => {
       </Tabs>
     </div>
   );
-}
+};
 
 export default TabsDemo;

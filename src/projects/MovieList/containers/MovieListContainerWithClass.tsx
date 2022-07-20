@@ -1,12 +1,12 @@
 import React from 'react';
 import MovieListRow from '../components/MovieListRow';
-import {connect} from 'react-redux';
-import {Movie} from '../types';
-import {ThunkDispatch} from 'redux-thunk';
-import {RootState} from '../../../store';
-import {Action} from 'redux';
-import {addMovieToMyList, getList, removeMovieFromMyList} from '../actions';
-import {getMyMovieList, getRecommendedList} from '../selectors';
+import { connect } from 'react-redux';
+import { Movie } from '../types';
+import { ThunkDispatch } from 'redux-thunk';
+import { RootState } from '../../../store';
+import { Action } from 'redux';
+import { addMovieToMyList, getList, removeMovieFromMyList } from '../actions';
+import { getMyMovieList, getRecommendedList } from '../selectors';
 
 interface DispatchProps {
   deleteMovie: (movie: Movie) => void;
@@ -40,7 +40,7 @@ class MovieListContainerWithClass extends React.PureComponent<Props> {
   }
 
   render() {
-    const {deleteMovie, addMovie, myMoviesList, recommendedMovies} =
+    const { deleteMovie, addMovie, myMoviesList, recommendedMovies } =
       this.props;
     return (
       <div>

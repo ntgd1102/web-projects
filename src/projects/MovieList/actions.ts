@@ -1,7 +1,7 @@
-import {ThunkAction} from 'redux-thunk';
-import {Action} from 'redux';
-import {Movie} from './types';
-import {RootState} from '../../store';
+import { ThunkAction } from 'redux-thunk';
+import { Action } from 'redux';
+import { Movie } from './types';
+import { RootState } from '../../store';
 
 export enum ActionType {
   fetchingMovieDone = 'FETCHING_MOVIE_DONE',
