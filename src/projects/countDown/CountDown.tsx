@@ -15,3 +15,5 @@ export const CountDown: React.FC = () => {
   }, [count]);
   return <div>{count}</div>;
 };
+
+export default CountDown;

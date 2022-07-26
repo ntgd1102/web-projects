@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Accordion } from "react-bootstrap";
-import { Accordion as AccordionByMyself } from "./Accordion";
+import { Accordion } from 'react-bootstrap';
 
 export const AccordionDemo: React.FC = () => {
   // return (
@@ -56,3 +55,5 @@ export const AccordionDemo: React.FC = () => {
     </div>
   );
 };
+
+export default AccordionDemo;

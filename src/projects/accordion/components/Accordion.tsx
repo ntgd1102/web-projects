@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
+import React, { useState } from 'react';
 
-import "./Accordion.scss";
+import './Accordion.scss';
 
 export interface AccordionProps {
   title: ReactNode;
@@ -21,7 +21,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   return (
     <div className="accordion">
       <div
-        className={`accordion-title ${className ?? ""}`}
+        className={`accordion-title ${className ?? ''}`}
         onClick={() => {
           setOpen(!open);
         }}

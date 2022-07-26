@@ -1,14 +1,12 @@
 import React, { useCallback, useState } from 'react';
-
-import HomePage from './HomePage';
-import CategoryPageWithRouteNav from './CategoryPageWithRouteNav';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 export enum Page {
   Home = 'home',
   Category = 'Category',
 }
 
-export const Menu: React.FC = () => {
+export const MenuWithNav: React.FC = () => {
   const [page, setPage] = useState<Page>(Page.Category);
   const handleClickGenerator = useCallback(
       (value: Page) => () => {
@@ -16,17 +14,33 @@ export const Menu: React.FC = () => {
       },
       [],
   );
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <div>
       <h1>1. Welcome to Chef Chu&rsquo;s Restaurant</h1>
-      <button onClick={handleClickGenerator(Page.Home)}>Home</button>
-      <button onClick={handleClickGenerator(Page.Category)}>Category</button>
+      <button
+        onClick={() => {
+          navigate(`/menu`);
+        }}
+      >
+        Home
+      </button>
+      <button
+        onClick={() => {
+          navigate(`./category`);
+        }}
+      >
+        Category
+      </button>
       <hr />
       <h4>Streamlinity UI test assignment starts be low this line..</h4>
       <hr />
-      {page === Page.Home ? <HomePage /> : <CategoryPageWithRouteNav />}
+      <Outlet />
     </div>
   );
 };
 
-export default Menu;
+export default MenuWithNav;

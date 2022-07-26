@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import lodash from 'lodash';
 import axios from 'axios';
 
-import './AutoComplete.css';
+import { css } from '@emotion/css';
 
 export default function AutoComplete() {
   const [input, setInput] = useState('');
@@ -33,7 +33,7 @@ export default function AutoComplete() {
       </div>
       <div className="list is-hoverable">
         {filteredItems.map((item, index) => (
-          <a key={index} className="list-item">
+          <a key={index} className={css(`display: block`)}>
             {item}
           </a>
         ))}

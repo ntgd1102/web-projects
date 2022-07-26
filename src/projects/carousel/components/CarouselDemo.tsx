@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import "./CarouselDemo.scss";
+import './CarouselDemo.scss';
 
-import { Carousel } from "react-bootstrap";
+import { Carousel } from 'react-bootstrap';
 
 export const CarouselDemo: React.FC = () => {
   return (

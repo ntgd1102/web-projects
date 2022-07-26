@@ -1,14 +1,15 @@
 .category-page {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .category-page__list {
-  margin: 30px;
+    margin: 30px;
 }
 
 .category-page__category-item {
-  width: 200px;
-  color: blue;
-  cursor: pointer;
+    width: 200px;
+    color: blue;
+    cursor: pointer;
+    display: block;
 }
