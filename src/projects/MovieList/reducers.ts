@@ -1,5 +1,5 @@
-import {ActionType} from './actions';
-import {Movie} from './types';
+import { ActionType } from './actions';
+import { Movie } from './types';
 
 export interface MovieState {
   myMovies: Movie[];

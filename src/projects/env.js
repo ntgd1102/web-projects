@@ -3,7 +3,6 @@ export const run = () => {
   // console.log(toBeReplaced.replace(/\s+/g, ' '));
   // output is "sdsd dsds ds" g: 是全局搜索多个 \s：是空格 +: 一个或多个
 
-  variableToBeChecked.constructor === Array;
   const extend = function(obj, extension) {
     if (typeof obj === 'object' && extension.constructor === Array) {
       for (const i in extension) {
