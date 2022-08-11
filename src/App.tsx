@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-// in order to render nested route
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { run } from './projects/env';
+
 import { css } from '@emotion/css';
+
+import { run } from './coding/codingQuestionForFEP/CodingQuestions';
 
 const App = () => {
   run();
+  // runner();
   return (
     <React.Fragment>
       <div>
@@ -29,6 +31,7 @@ const App = () => {
           <Link to="/auto-complete">Auto Complete</Link>
           <Link to="/carousel">Carousel</Link>
           <Link to="/heat-map">Heat Map</Link>
+          <Link to="/test">Test</Link>
         </nav>
       </div>
       <Outlet />

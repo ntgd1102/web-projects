@@ -15,6 +15,7 @@ export const TabsDemo: React.FC = () => {
     );
   };
 
+  console.log('11');
   return (
     <div className="App">
       <Tabs defaultTabIndex={1}>

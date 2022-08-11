@@ -1,25 +1,25 @@
 Array.prototype.map = function(fn) {
-  let result = [];
-  for (let item of this) {
-    let processedResult = fn(item);
+  const result = [];
+  for (const item of this) {
+    const processedResult = fn(item);
     result.push(processedResult);
   }
   return result;
-}
+};
 
 export const lodashMap = (array, fn) => {
-  let result = [];
-  for (let item of array) {
-    let processedResult = fn(item);
+  const result = [];
+  for (const item of array) {
+    const processedResult = fn(item);
     result.push(processedResult);
   }
   return result;
-} 
+};
 
 export function map(fn) {
-  let result = [];
-  for (let item of this) {
-    let processedResult = fn(item);
+  const result = [];
+  for (const item of this) {
+    const processedResult = fn(item);
     result.push(processedResult);
   }
   return result;

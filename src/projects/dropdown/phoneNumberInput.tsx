@@ -1,8 +1,9 @@
-import React, {useCallback, useMemo, useState} from 'react';
-import {Dropdown} from 'react-bootstrap';
+import React, { useCallback, useMemo, useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
 
 import './PhoneNumberInput.scss';
-import {throttle} from '../implementationsForJSApi/debounce&throttle';
+// eslint-disable-next-line max-len
+import { throttle } from '../../coding/implementationsForJSApiOrLodash/debounce&throttle';
 
 export const countryCodeMap = {
   'England': '+44',
@@ -16,7 +17,7 @@ interface Props {
   };
 }
 
-export const PhoneNumberInput: React.FC<Props> = ({countryCodeMap}) => {
+export const PhoneNumberInput: React.FC<Props> = ({ countryCodeMap }) => {
   const [countryCode, setCountryCode] = useState<string | undefined>(undefined);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 

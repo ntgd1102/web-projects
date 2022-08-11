@@ -12,6 +12,7 @@ import MenuWithNav from './projects/menuCategory/components/MenuWithNav';
 import CategoryItems from './projects/menuCategory/components/CategoryItems';
 import CategoryPageWithRouteNav
   from './projects/menuCategory/components/CategoryPageWithRouteNav';
+import Parent from './projects/ParentAndChild/Parent';
 
 // const App = React.lazy(() => import('./App'));
 
@@ -33,6 +34,7 @@ export const AppRouter: React.FC = () => {
           <Route path="auto-complete" element={<AutoComplete />} />
           <Route path="carousel" element={<CarouselDemo />} />
           <Route path="heat-map" element={<HeatMap />} />
+          <Route path="test" element={<Parent />} />
         </Route>
       </Routes>
     </BrowserRouter>
