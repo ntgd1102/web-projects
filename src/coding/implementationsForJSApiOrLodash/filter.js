@@ -1,14 +1,15 @@
-Array.prototype.filter = function (fn) {
-  let result = [];
-  for (let item of this) {
+Array.prototype.filter = function(fn) {
+  const result = [];
+  for (const item of this) {
     if (fn(item)) result.push(item);
   }
   return result;
 };
 
 export function filter(fn) {
-  let result = [];
-  for (let item of this) {
+  const result = [];
+
+  for (const item of this) {
     if (fn(item)) {
       result.push(item);
     }
@@ -17,12 +18,11 @@ export function filter(fn) {
 }
 
 export const filterWithoutThis = (array, fn) => {
-  let result = [];
-  for (let item of array) {
+  const result = [];
+  for (const item of array) {
     if (fn(item)) {
       result.push(item);
     }
   }
   return result;
-}
-
+};

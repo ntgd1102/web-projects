@@ -25,6 +25,7 @@ export const getList =
           type: ActionType.fetchingMovieDone,
           payload: res,
         });
+        return 1;
       } catch (e) {}
     };
 

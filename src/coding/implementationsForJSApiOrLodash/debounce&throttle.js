@@ -9,7 +9,9 @@ export function debounce(fn, delay) {
   };
 }
 
-// throttle(func, delay) will return a throttled function, which will invoke the func at a max frequency no matter how throttled one is called.
+// throttle(func, delay) will return a throttled function,
+// which will invoke the func at a max frequency no matter
+// how throttled one is called.
 export function throttle(func, wait) {
   // your code here
   let shouldWait = false;
@@ -25,7 +27,7 @@ export function throttle(func, wait) {
       }
     }, wait);
 
-  return function (...args) {
+  return function(...args) {
     if (!shouldWait) {
       shouldWait = true;
       func(...args);

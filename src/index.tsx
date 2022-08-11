@@ -7,11 +7,9 @@ import store from './store';
 import { AppRouter } from './AppRouter';
 
 ReactDOM.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <AppRouter />
-      </Provider>
-    </React.StrictMode>,
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>,
     document.getElementById('root'),
 );
 

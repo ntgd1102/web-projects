@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
 export interface TabProps {
   /**
@@ -17,8 +18,14 @@ export interface TabProps {
 }
 
 export const Tab: React.FC<TabProps> = (children, className) => {
-  // eslint-disable-next-line react/jsx-filename-extension
-  return <div className={className}>{children}</div>;
+  const [number, setNumber] = useState(1);
+  return (
+    <div className={className}>
+      {children}
+      {number}
+      <Button onClick={() => setNumber((number) => number + 1)}>NNN</Button>
+    </div>
+  );
 };
 
 export default Tab;

@@ -1,6 +1,6 @@
-Array.prototype.reduce = function (fn, start) {
+Array.prototype.reduce = function(fn, start) {
   let result = start;
-  for (let item of this) {
+  for (const item of this) {
     result = fn(result, item);
   }
   return result;
@@ -8,7 +8,7 @@ Array.prototype.reduce = function (fn, start) {
 
 export const lodashReduce = (array, fn, start) => {
   let result = start;
-  for (let item of array) {
+  for (const item of array) {
     result = fn(result, item);
   }
   return result;
